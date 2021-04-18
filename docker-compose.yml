@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+    target_1:
+        container_name: "target_1"
+        image: node:latest
+        command: node app.js /app/target
+        ports:
+            - 9999:9997
+        working_dir: /app
+        volumes:
+            - .:/app
+
+    target_2:
+        container_name: "target_2"
+        image: node:latest
+        command: node app.js /app/target
+        ports:
+            - 9998:9997
+        working_dir: /app
+        volumes:
+            - .:/app
+    splitter:
+        container_name: "splitter"
+        image: node:latest
+        command: node app.js /app/splitter
+        ports:
+            - 9996:9997
+        working_dir: /app
+        volumes:
+            - .:/app
+        depends_on:
+            - "target_1"
+            - "target_2"
+    agent:
+        container_name: "agent"
+        image: node:latest
+        command: node app.js /app/agent
+        ports:
+            - 9995:9997
+        working_dir: /app
+        volumes:
+            - .:/app
+        depends_on:
+            - "splitter"
