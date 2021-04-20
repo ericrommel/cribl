@@ -133,7 +133,6 @@ temp/
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
-.idea/
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
@@ -223,6 +222,7 @@ fabric.properties
 .idea/**/markdown-navigator.xml
 .idea/**/markdown-navigator-enh.xml
 .idea/**/markdown-navigator/
+.idea/
 
 # Cache file creation bug
 # See https://youtrack.jetbrains.com/issue/JBR-2257
