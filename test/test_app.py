@@ -10,8 +10,8 @@ import docker
 from .log import Log
 
 AGENT = "agent"
-EVENTS_LOG = "../events.log"
-INPUT_FILE = "../agent/inputs/large_1M_events.log"
+EVENTS_LOG = "events.log"
+INPUT_FILE = "agent/inputs/large_1M_events.log"
 SPLITTER = "splitter"
 TARGET = "target"
 TARGET_1 = "target_1"
